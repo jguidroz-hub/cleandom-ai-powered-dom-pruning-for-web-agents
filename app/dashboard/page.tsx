@@ -32,7 +32,7 @@ export default function DashboardPage() {
             <h3 className="font-medium">Extraction History</h3>
             <p className="text-sm text-gray-500">View past web content extractions</p>
           </a>
-          <a href="/dashboard/configs" className="block p-4 border rounded-lg hover:bg-blue-50 transition">
+          <a href="/dashboard/extractionConfigs" className="block p-4 border rounded-lg hover:bg-blue-50 transition">
             <h3 className="font-medium">Extraction Configurations</h3>
             <p className="text-sm text-gray-500">Manage custom pruning rules</p>
           </a>

@@ -17,7 +17,7 @@ export default function ConfigsPage() {
   const [newTitle, setNewTitle] = useState('');
 
   useEffect(() => {
-    fetch('/api/configs')
+    fetch('/api/extractionConfigs')
       .then(r => r.json())
       .then(data => { setItems(data.items || []); setLoading(false); })
       .catch(() => setLoading(false));
@@ -25,7 +25,7 @@ export default function ConfigsPage() {
 
   const handleCreate = async () => {
     if (!newTitle.trim()) return;
-    const res = await fetch('/api/configs', {
+    const res = await fetch('/api/extractionConfigs', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title: newTitle }),
@@ -39,7 +39,7 @@ export default function ConfigsPage() {
   };
 
   const handleDelete = async (id: string) => {
-    await fetch(`/api/configs/${id}`, { method: 'DELETE' });
+    await fetch(`/api/extractionConfigs/${id}`, { method: 'DELETE' });
     setItems(prev => prev.filter(i => i.id !== id));
   };
 
