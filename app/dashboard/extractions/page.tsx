@@ -17,7 +17,7 @@ export default function ExtractionsPage() {
   const [newTitle, setNewTitle] = useState('');
 
   useEffect(() => {
-    fetch('/api/extractions')
+    fetch('/api/webExtractions')
       .then(r => r.json())
       .then(data => { setItems(data.items || []); setLoading(false); })
       .catch(() => setLoading(false));
@@ -25,7 +25,7 @@ export default function ExtractionsPage() {
 
   const handleCreate = async () => {
     if (!newTitle.trim()) return;
-    const res = await fetch('/api/extractions', {
+    const res = await fetch('/api/webExtractions', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title: newTitle }),
@@ -39,7 +39,7 @@ export default function ExtractionsPage() {
   };
 
   const handleDelete = async (id: string) => {
-    await fetch(`/api/extractions/${id}`, { method: 'DELETE' });
+    await fetch(`/api/webExtractions/${id}`, { method: 'DELETE' });
     setItems(prev => prev.filter(i => i.id !== id));
   };
 
@@ -61,7 +61,7 @@ export default function ExtractionsPage() {
         </button>
       </div>
 
-      <p className="text-gray-600 mb-6">View past web content extractions</p>
+      <p className="text-gray-600 mb-6">View past web content webExtractions</p>
 
       {showCreate && (
         <div className="mb-6 p-4 border rounded-lg bg-gray-50">

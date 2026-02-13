@@ -28,9 +28,9 @@ export default function DashboardPage() {
 
       <h2 className="text-lg font-semibold mb-4">Quick Access</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
-          <a href="/dashboard/extractions" className="block p-4 border rounded-lg hover:bg-blue-50 transition">
+          <a href="/dashboard/webExtractions" className="block p-4 border rounded-lg hover:bg-blue-50 transition">
             <h3 className="font-medium">Extraction History</h3>
-            <p className="text-sm text-gray-500">View past web content extractions</p>
+            <p className="text-sm text-gray-500">View past web content webExtractions</p>
           </a>
           <a href="/dashboard/extractionConfigs" className="block p-4 border rounded-lg hover:bg-blue-50 transition">
             <h3 className="font-medium">Extraction Configurations</h3>
